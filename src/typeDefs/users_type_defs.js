@@ -17,11 +17,11 @@ const usersTypeDefs = gql `
     
     type UserInformation {
         id: String!
-        username: String!
-        password: String!
+        username: String
+        password: String
         address: String
         telephone: Int
-        email: String!
+        email: String
     }
 
     extend type Query {
