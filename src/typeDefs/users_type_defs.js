@@ -24,6 +24,14 @@ const usersTypeDefs = gql `
         email: String
     }
 
+    type UserInformationUpdated {
+        username: String
+        password: String
+        address: String
+        telephone: Int
+        email: String
+    }  
+
     extend type Query {
         getUserById(userId: String!): [UserInformation]
     }
@@ -31,6 +39,10 @@ const usersTypeDefs = gql `
     extend type Mutation {
         authenticate(credentials: CredentialsInput!): Tokens!
         refreshToken(refresh: String!): Access!
+    }
+
+    extend type Mutation{
+        updateUserInformation(userId: String!):[UserInformationUpdated]
     }
 `;
 

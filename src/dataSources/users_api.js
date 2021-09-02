@@ -20,7 +20,12 @@ class UsersAPI extends RESTDataSource {
 
     async getUserById(userId){
         return await this.get(`/users/${userId}`);    
-      }
+    }
+
+    async updateUserInformation(userId){
+        return await this.put(`/users/${userId}`);    
+    }
+    
 }
 
 module.exports = UsersAPI;
