@@ -50,8 +50,9 @@ const usersTypeDefs = gql `
     }
 
     extend type Mutation{
-        updateUserInformation(userId: String!, UserInformationInput ):[UserInformationUpdated]
+        updateUserInformation(userId: String!, information: UserInformationInput): information
     }
+    
 `;
 
 module.exports = usersTypeDefs;

@@ -22,8 +22,9 @@ class UsersAPI extends RESTDataSource {
         return await this.get(`/users/${userId}`);    
     }
 
-    async updateUserInformation(userId){
-        return await this.put(`/users/${userId}`);    
+    async updateUserInformation(userId, information){
+        information = new Object(JSON.parse(JSON.stringify(information)));
+        return await this.put(`/users/${userId}`,information);    
     }
     
 }

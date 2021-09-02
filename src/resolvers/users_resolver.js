@@ -11,9 +11,9 @@ const usersResolver = {
     Mutation: {
         authenticate: (_, { credentials }, { dataSources }) => dataSources.usersAPI.authRequest(credentials),
         refreshToken: (_, { refresh }, { dataSources }) => dataSources.usersAPI.refreshToken(refresh),
-        updateUserInformation: (_, {userId}, {dataSources, userIdToken}) => {
+        updateUserInformation: (_, { userId },{ information }, {dataSources, userIdToken}) => {
             if(userId == userIdToken) 
-                return dataSources.accountAPI.updateUserInformation(UserInformationUpdated)
+                return dataSources.accountAPI.updateUserInformation(information)
             else
                 return null
         }

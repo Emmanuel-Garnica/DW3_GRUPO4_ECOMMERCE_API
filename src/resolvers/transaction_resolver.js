@@ -8,7 +8,7 @@ const transactionResolver = {
         }
     },
     Mutation: {
-        createTransacction: (_, {transaction}, {dataSources, userIdToken}) => {
+        createTransacction: (_, { transaction }, {dataSources, userIdToken}) => {
             if(transaction.userIdOrigin == userIdToken) 
                 return dataSources.accountAPI.createTransacction(transaction)
             else
